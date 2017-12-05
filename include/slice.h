@@ -3,7 +3,7 @@
 
 #include <stddef.h>
 
-#define slice_t(type) struct { type *data; size_t length; }
+#define slice_t(T) struct { T *data; size_t length; }
 
 #define slice_make(ptr, length) { .data = (ptr), .length = (length) }
 

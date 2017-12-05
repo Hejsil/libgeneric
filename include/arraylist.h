@@ -4,7 +4,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-#define arraylist_t(type) struct { type *data; size_t length, capacity; }
+#define arraylist_t(T) struct { T *data; size_t length, capacity; }
 
 #define arraylist_make() { .data = NULL, .length = 0, .capacity = 1 }
 
