@@ -22,7 +22,7 @@ void *__arraylist_get_ptr(void *varraylist, size_t index, size_t item_size);
 void __arraylist_add(void *varraylist, size_t index, void *item, size_t item_size);
 #define arraylist_add(arraylist, index, item) {                                         \
     typeof((arraylist)) __arraylist__ = (arraylist);                                    \
-    typeof(__arraylist__->data[0]) __item__ = item;                                     \
+    typeof(__arraylist__->data[0]) __item__ = (item);                                   \
     (void)__arraylist__->length;                                                        \
     (void)__arraylist__->capacity;                                                      \
     __arraylist_add(__arraylist__, (index), &__item__, sizeof(__arraylist__->data[0])); \
