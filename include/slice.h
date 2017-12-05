@@ -10,7 +10,6 @@
 void *__slice_get_ptr(void *vslice, size_t index, size_t item_size);
 #define slice_get_ptr(slice, index) ({                                                        \
     typeof((slice)) __slice__ = slice;                                                        \
-    (void)__slice__->data;                                                                    \
     (void)__slice__->length;                                                                  \
     (typeof(__slice__->data))__slice_get_ptr(__slice__, (index), sizeof(__slice__->data[0])); \
 })
