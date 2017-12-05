@@ -5,7 +5,8 @@ include(GNUInstallDirs)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
 add_library(libgeneric SHARED
     src/slice.c
-    src/arraylist.c)
+    src/arraylist.c
+    src/linkedlist.c)
 
 set_target_properties(libgeneric PROPERTIES 
     VERSION ${PROJECT_VERSION}
@@ -30,3 +31,8 @@ add_executable(arraylist_test test/arraylist_test.c)
 target_include_directories(arraylist_test PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_link_libraries(arraylist_test libgeneric)
 add_test (NAME ArraylistTest COMMAND arraylist_test "arraylist_test")
+
+add_executable(linkedlist_test test/linkedlist_test.c)
+target_include_directories(linkedlist_test PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(linkedlist_test libgeneric)
+add_test (NAME LinkedlistTest COMMAND linkedlist_test "linkedlist_test")
