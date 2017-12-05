@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 project(libgeneric VERSION 0.0.1 DESCRIPTION "A collection of useful generic data structures.")
 include(GNUInstallDirs)
 
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
 add_library(libgeneric SHARED
     src/slice.c)
 
