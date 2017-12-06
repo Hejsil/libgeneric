@@ -6,30 +6,22 @@
 
 int linkedlist_test() {
     const size_t length = 100;
-    linkedlist_t(int8_t)  *i8_list  = linkedlist_make(int8_t , 0);
-    linkedlist_t(int16_t) *i16_list = linkedlist_make(int16_t, 0);
-    linkedlist_t(int32_t) *i32_list = linkedlist_make(int32_t, 0);
-    linkedlist_t(int64_t) *i64_list = linkedlist_make(int64_t, 0);
-    linkedlist_t(float)   *f_list   = linkedlist_make(float  , 0);
-    linkedlist_t(double)  *d_list   = linkedlist_make(double , 0);
+    linkedlist_t(int8_t)  *i8_list  = linkedlist_make();
+    linkedlist_t(int16_t) *i16_list = linkedlist_make();
+    linkedlist_t(int32_t) *i32_list = linkedlist_make();
+    linkedlist_t(int64_t) *i64_list = linkedlist_make();
+    linkedlist_t(float)   *f_list   = linkedlist_make();
+    linkedlist_t(double)  *d_list   = linkedlist_make();
 
-    if (i16_list->value != i8_list->value ||
-        i32_list->value != i8_list->value ||
-        i64_list->value != i8_list->value ||
-        f_list->value   != i8_list->value ||
-        d_list->value   != i8_list->value) {
+    if (linkedlist_length(i8_list)  != 0 ||
+        linkedlist_length(i32_list) != 0 ||
+        linkedlist_length(i64_list) != 0 ||
+        linkedlist_length(f_list)   != 0 ||
+        linkedlist_length(d_list)   != 0) {
         return 1;
     }
 
-    if (linkedlist_length(i8_list)  != 1 ||
-        linkedlist_length(i32_list) != 1 ||
-        linkedlist_length(i64_list) != 1 ||
-        linkedlist_length(f_list)   != 1 ||
-        linkedlist_length(d_list)   != 1) {
-        return 1;
-    }
-
-    for (size_t i = 1; i < length; i++) {
+    for (size_t i = 0; i < length; i++) {
         i8_list  = linkedlist_append(i8_list,  i);
         i16_list = linkedlist_append(i16_list, i);
         i32_list = linkedlist_append(i32_list, i);
