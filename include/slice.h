@@ -18,7 +18,7 @@
 
 void *__slice_get_ptr(void *vslice, size_t index, size_t item_size);
 #define slice_get_ptr(slice, index) ({                                                        \
-    typeof((slice)) __slice__ = slice;                                                        \
+    auto_t __slice__ = slice;                                                                 \
     __slice_type_check(__slice__);                                                            \
     (typeof(__slice__->data))__slice_get_ptr(__slice__, (index), sizeof(__slice__->data[0])); \
 })

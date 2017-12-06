@@ -38,12 +38,12 @@ int linkedlist_test() {
         return 1;
     }
     
-    typeof(i8_list)  head_i8_list  = i8_list;
-    typeof(i16_list) head_i16_list = i16_list;
-    typeof(i32_list) head_i32_list = i32_list;
-    typeof(i64_list) head_i64_list = i64_list;
-    typeof(f_list)   head_f_list   = f_list;
-    typeof(d_list)   head_d_list   = d_list;
+    auto_t head_i8_list  = i8_list;
+    auto_t head_i16_list = i16_list;
+    auto_t head_i32_list = i32_list;
+    auto_t head_i64_list = i64_list;
+    auto_t head_f_list   = f_list;
+    auto_t head_d_list   = d_list;
 
     for (size_t i = 0; i < length; i++) {
         size_t value = length - (i + 1);

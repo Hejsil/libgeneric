@@ -1,5 +1,5 @@
-#ifndef TYPECHECK_H
-#define TYPECHECK_H
+#ifndef TYPES_H
+#define TYPES_H
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -19,6 +19,8 @@ typedef enum typeid_e {
     TYPEID_OTHER
 } typeid_t;
 
+#define auto_t __auto_type
+
 #define is_compatible(x, T) _Generic((x), T: true, default: false)
 
 #define get_typeid(T)             \
@@ -37,4 +39,4 @@ typedef enum typeid_e {
         default : TYPEID_OTHER    \
 )
 
-#endif // TYPECHECK_H
+#endif // TYPES_H
