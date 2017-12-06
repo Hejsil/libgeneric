@@ -8,6 +8,7 @@ add_library(libgeneric SHARED
     src/arraylist.c
     src/linkedlist.c)
 
+set_property(TARGET libgeneric PROPERTY C_STANDARD 11)
 set_target_properties(libgeneric PROPERTIES 
     VERSION ${PROJECT_VERSION}
     PUBLIC_HEADER include/*)
